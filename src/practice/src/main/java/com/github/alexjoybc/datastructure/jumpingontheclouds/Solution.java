@@ -10,7 +10,12 @@ import java.util.regex.*;
 
 public class Solution {
 
-    // Complete the jumpingOnClouds function below.
+    /**
+     * Return the number of jumps to solve https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem
+     * Time complexity: O(n)
+     * @param c
+     * @return
+     */
     static int jumpingOnClouds(int[] c) {
 
         int result = 0;
