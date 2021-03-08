@@ -8,32 +8,15 @@ import org.junit.rules.Stopwatch;
 
 import java.util.Arrays;
 
-public abstract class SingleArrayInput {
+public abstract class SingleArrayInput extends SingleParamInput<int[]> {
 
-    protected final int[] input;
-    private final int expected;
 
     public SingleArrayInput(int[] input, int expected) {
-        this.input = input;
-        this.expected = expected;
+        super(input, expected);
     }
 
-    public abstract int run();
-
-    @Test
-    public void runTest() {
-
-        System.out.println("input: " + Arrays.toString(input));
-
-        StopWatch watch = new StopWatch();
-        watch.start();
-        int result = run();
-        watch.stop();
-
-        Assertions.assertEquals(expected, result);
-
-        System.out.println("Time Elapsed: " + watch.getNanoTime() / 1000 + " micro seconds");
-
+    @Override
+    public void printInput() {
+        System.out.println(Arrays.toString(input));
     }
-
 }
